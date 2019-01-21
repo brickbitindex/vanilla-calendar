@@ -40,7 +40,7 @@ $piece: 14.285%;
 }
 
 .vcal-container {
-  font-size: 14px;
+  font-size: $font-size;
   background-color: $bg-color;
   border-radius: $border-radius;
   border: 1px solid #e8e8e8;
@@ -99,10 +99,9 @@ $piece: 14.285%;
   .vcal-week span {
     flex-direction: column;
     flex: 0 0 $piece;
-    font-size: 1.2rem;
     font-weight: bold;
     max-width: $piece;
-    padding: 1.2rem 1.4rem;
+    padding: 1.2rem 0;
     text-align: center;
     text-transform: uppercase;
   }
