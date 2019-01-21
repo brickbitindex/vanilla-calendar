@@ -1,8 +1,8 @@
 {
   "name": "@kuchain/pbc-calendar",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A simple, hackable vanilla JS calendar",
-  "main": "lib/index.min.js",
+  "main": "lib/index.js",
   "files": [
     "lib",
     "src"
@@ -74,5 +74,8 @@
     "webpack-dev-server": "^1.14.1",
     "webpack-node-externals": "^1.5.4",
     "webpack-shell-plugin": "^0.5.0"
+  },
+  "dependencies": {
+    "@kuchain/pbc-calendar": "^0.0.8"
   }
 }
