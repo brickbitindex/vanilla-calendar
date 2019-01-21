@@ -1,0 +1,203 @@
+// passport ui const
+$unit: 8px;
+
+$lg-size: 40px;
+$md-size: 32px;
+$sm-size: 24px;
+
+$primary-color-1: #fc466b;
+$primary-color-2: #1a9be3;
+
+$text-color: rgba(0, 0, 0, .65);
+$text-color-inverted: #fff;
+
+$font-size: 14px;
+
+$anime-ease: cubic-bezier(.645,.045,.355,1);
+$anime-duration: 0.3s;
+$transition: all $anime-duration $anime-ease;
+
+$box-shadow-sm: 0 2px 0 rgba(0,0,0,.03);
+$box-shadow-md: 0 2px 8px 1px rgba(0,0,0,0.1);
+
+$clickwave: clickwave 0.5s $anime-ease;
+
+// vanilla calendar const
+
+$bg-color: #fff;
+$border-radius: 0;
+$border-color: #e7e9ed;
+$today-bg-color: #10989E;
+$today-color: #fff;
+$selected-bg-color: #E7E9ED;
+$selected-color: #333;
+$piece: 14.285%;
+
+.vcal-container *,
+.vcal-container *:before,
+.vcal-container *:after {
+  box-sizing: border-box;
+}
+
+.vcal-container {
+  font-size: 14px;
+  background-color: $bg-color;
+  border-radius: $border-radius;
+  border: 1px solid #e8e8e8;
+  // box-shadow: 0 4px 22px 0 rgba(0, 0, 0, 0.05);
+  margin: 0 auto;
+  overflow: hidden;
+  width: 320px;
+  transition: $transition;
+
+  &:hover {
+    border-color: $primary-color-2;
+  }
+
+  .vcal-btn {
+    user-select: none;
+    appearance: button;
+    background: none;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    line-height: normal;
+    min-width: 27px;
+    outline: none;
+    overflow: visible;
+    padding: 0;
+    text-align: center;
+    &:active {
+      border-radius: $border-radius;
+      box-shadow: 0 0 0 2px rgba($today-bg-color, 0.1)
+    }
+  }
+
+  .vcal-header {
+    align-items: center;
+    display: flex;
+    padding: 1.2rem 1.4rem;
+  }
+
+  .vcal-header svg {
+    fill: $primary-color-2;
+  }
+
+  .vcal-header__label {
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+  }
+
+  .vcal-week {
+    background-color: rgba(#000, 0.03);
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .vcal-week span {
+    flex-direction: column;
+    flex: 0 0 $piece;
+    font-size: 1.2rem;
+    font-weight: bold;
+    max-width: $piece;
+    padding: 1.2rem 1.4rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .vcal-body {
+    background-color: rgba(#000, 0.03);
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+  }
+
+  .vcal-date {
+    align-items: center;
+    background-color: #fff;
+    border-radius: $border-radius;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 $piece;
+    max-width: $piece;
+    padding: 0.4rem 0;
+
+    span {
+      position: relative;
+      line-height: $md-size;
+      height: $md-size;
+      color: $text-color;
+      font-weight: 400;
+      text-align: center;
+      white-space: nowrap;
+      background-image: none;
+      transition: $transition;
+      background-color: #fff;
+      font-size: $font-size;
+      outline: none;
+      padding: 0;
+      width: $md-size;
+      display: inline-block;
+      border-radius: 50%;
+
+      &::after {
+        box-sizing: border-box;
+        border: 1px solid transparent;
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+        transition: $transition;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .vcal-date--active {
+    cursor: pointer;
+
+    &:hover span{
+      box-shadow: $box-shadow-sm;
+
+      &::after {
+        border-color: $primary-color-2;
+      }
+    }
+  }
+
+  .vcal-date--today {
+    span::after {
+      border-color: $primary-color-2;
+      opacity: 0.4;
+    }
+  }
+
+  .vcal-date--selected {
+    span {
+      box-shadow: $box-shadow-sm;
+
+      &::after {
+        opacity: 0;
+      }
+  
+      background-image: linear-gradient(-45deg, $primary-color-1, $primary-color-2);
+      background-size: 170%;
+      background-position: 0% 50%;
+      color: $text-color-inverted;
+    }
+  }
+
+  .vcal-date--disabled {
+    border-radius: 0;
+    cursor: not-allowed;
+
+    span {
+      color: #d8d8d8;
+    }
+  }
+}
