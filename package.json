@@ -1,5 +1,5 @@
 {
-  "name": "pbc-calendar",
+  "name": "@kuchain/pbc-calendar",
   "version": "0.0.4",
   "description": "A simple, hackable vanilla JS calendar",
   "main": "lib/index.min.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brickbitindex/vanilla-calendar.git"
+    "url": "https://github.com/brickbitindex/vanilla-calendar.git"
   },
   "keywords": [
     "vanilla",
