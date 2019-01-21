@@ -15,19 +15,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://chrisssycollins@github.com/chrisssycollins/vanilla-calendar.git"
+    "url": "git+https://github.com/brickbitindex/vanilla-calendar.git"
   },
   "keywords": [
     "vanilla",
     "calendar",
     "javascript"
   ],
-  "author": "Chrissy Collins",
+  "author": "sekaiamber",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chrisssycollins/vanilla-calendar/issues"
+    "url": "https://github.com/brickbitindex/vanilla-calendar/issues"
   },
-  "homepage": "https://github.com/chrisssycollins/vanilla-calendar#readme",
+  "homepage": "https://github.com/brickbitindex/vanilla-calendar#readme",
   "devDependencies": {
     "autoprefixer": "^9.0.1",
     "babel-cli": "^6.6.0",
