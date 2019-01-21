@@ -106,7 +106,7 @@ $piece: 14.285%;
   }
 
   .vcal-body {
-    background-color: rgba(#000, 0.03);
+    // background-color: rgba(#000, 0.03);
     display: flex;
     flex-wrap: wrap;
     justify-items: center;
@@ -114,7 +114,7 @@ $piece: 14.285%;
 
   .vcal-date {
     align-items: center;
-    background-color: #fff;
+    // background-color: #fff;
     border-radius: $border-radius;
     display: flex;
     flex-direction: column;
