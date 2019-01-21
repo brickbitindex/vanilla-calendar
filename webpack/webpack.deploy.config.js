@@ -10,10 +10,10 @@ var version = require('../package.json').version;
 var config = {
   context: path.join(__dirname, '..', '/'),
   entry: {
-    [version + '/bpc']: './src/index',
+    index: './src/index',
   },
   output: {
-    path: path.join(__dirname, '..', '/dist'),
+    path: path.join(__dirname, '..', '/lib'),
     filename: '[name].min.js',
   },
   plugins: [

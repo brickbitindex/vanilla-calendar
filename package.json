@@ -1,12 +1,17 @@
 {
-  "name": "vanilla-calendar",
-  "version": "0.0.3",
+  "name": "pbc-calendar",
+  "version": "0.0.4",
   "description": "A simple, hackable vanilla JS calendar",
-  "main": "./src/vanillaCalendar.js",
+  "main": "lib/index.min.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "clear": "rm -rf dist && rm -rf dist_dev",
     "dev": "npm run clear && webpack -p --display-error-details --config webpack/webpack.dev.config.js -w",
+    "deploy": "NODE_ENV=production webpack -p --display-error-details --config webpack/webpack.deploy.config.js --profile --json > webpack-stats.json",
     "server": "http-server ."
+
   },
   "repository": {
     "type": "git",
