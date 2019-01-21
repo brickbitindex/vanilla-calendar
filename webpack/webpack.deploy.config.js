@@ -13,7 +13,7 @@ var config = {
     index: './src/index',
   },
   output: {
-    path: path.join(__dirname, '..', '/lib'),
+    path: path.join(__dirname, '..', '/dist'),
     filename: '[name].min.js',
   },
   plugins: [

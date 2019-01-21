@@ -1,6 +1,6 @@
 {
   "name": "@kuchain/pbc-calendar",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A simple, hackable vanilla JS calendar",
   "main": "lib/index.min.js",
   "files": [
@@ -12,7 +12,8 @@
     "dev": "npm run clear && webpack -p --display-error-details --config webpack/webpack.dev.config.js -w",
     "deploy": "NODE_ENV=production webpack -p --display-error-details --config webpack/webpack.deploy.config.js --profile --json > webpack-stats.json",
     "server": "http-server .",
-    "prepublish": "npm run deploy"
+    "build": "rm -rf lib && babel src -d lib",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
