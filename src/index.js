@@ -39,6 +39,7 @@ const defaultOptions = {
   checkDisabledDate: NULL_FUNC,
   previousIcon: '<svg height="24" version="1.1" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path></svg>',
   nextIcon: '<svg height="24" version="1.1" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path></svg>',
+  value: null,
 };
 
 
@@ -48,9 +49,10 @@ class VanillaCalendar {
   previous = null
   label = null
   activeDates = null
-  anchorDate = new Date()
-  todaysDate = new Date()
+  anchorDate = null
+  todaysDate = null
   container = null
+  value = null
 
   constructor(container, options) {
     this.container = container;
@@ -64,10 +66,23 @@ class VanillaCalendar {
     this.next = this.container.querySelector('[data-calendar-toggle="next"]');
     this.previous = this.container.querySelector('[data-calendar-toggle="previous"]');
     this.label = this.container.querySelector('[data-calendar-label="month"]');
-    this.anchorDate.setDate(1);
+    const anchorDate = new Date();
+    anchorDate.setDate(1);
+    this.anchorDate = this.getCleanDate(anchorDate);
+    this.todaysDate = this.getCleanDate(new Date());
+    this.value = this.getCleanDate(this.options.value);
     this.createInterface();
     this.createMonth();
     this.createListeners();
+  }
+
+  getCleanDate(date) {
+    const ret = new Date(date);
+    ret.setHours(12);
+    ret.setMinutes(0);
+    ret.setSeconds(0);
+    ret.setMilliseconds(0);
+    return ret;
   }
 
   createInterface() {
@@ -131,8 +146,12 @@ class VanillaCalendar {
       newDay.setAttribute('data-calendar-status', 'active');
     }
 
-    if (date.toString() === this.todaysDate.toString()) {
+    if (date.getTime() === this.todaysDate.getTime()) {
       newDay.classList.add('vcal-date--today');
+    }
+
+    if (this.value && date.getTime() === this.value.getTime()) {
+      newDay.classList.add('vcal-date--selected');
     }
 
     newDay.appendChild(dateEl);
@@ -156,9 +175,8 @@ class VanillaCalendar {
         const selectedDate = elm.dataset.calendarDate;
         this.removeActiveClass();
         elm.classList.add('vcal-date--selected');
-        if (this.options.onSelect) {
-          this.options.onSelect(new Date(selectedDate));
-        }
+        this.value = new Date(new Date(selectedDate));
+        this.options.onSelect(this.value);
       });
     }
   }
