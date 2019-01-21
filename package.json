@@ -10,8 +10,8 @@
     "clear": "rm -rf dist && rm -rf dist_dev",
     "dev": "npm run clear && webpack -p --display-error-details --config webpack/webpack.dev.config.js -w",
     "deploy": "NODE_ENV=production webpack -p --display-error-details --config webpack/webpack.deploy.config.js --profile --json > webpack-stats.json",
-    "server": "http-server ."
-
+    "server": "http-server .",
+    "prepublish": "npm run deploy"
   },
   "repository": {
     "type": "git",
