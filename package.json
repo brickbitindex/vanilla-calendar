@@ -1,10 +1,11 @@
 {
   "name": "@kuchain/pbc-calendar",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A simple, hackable vanilla JS calendar",
   "main": "lib/index.min.js",
   "files": [
-    "lib"
+    "lib",
+    "src"
   ],
   "scripts": {
     "clear": "rm -rf dist && rm -rf dist_dev",
