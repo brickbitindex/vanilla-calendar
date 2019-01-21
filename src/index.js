@@ -1,5 +1,3 @@
-import './style.scss';
-
 const template = `<div class="vcal-header">
   <button class="vcal-btn" data-calendar-toggle="previous"></button>
   <div class="vcal-header__label" data-calendar-label="month"></div>

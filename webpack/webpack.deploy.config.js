@@ -10,7 +10,7 @@ var version = require('../package.json').version;
 var config = {
   context: path.join(__dirname, '..', '/'),
   entry: {
-    index: './src/index',
+    index: './webpack/pack',
   },
   output: {
     path: path.join(__dirname, '..', '/dist'),
